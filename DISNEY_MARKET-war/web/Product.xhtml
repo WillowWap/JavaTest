@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./Template_Basic.xhtml">
+           <ui:define name="content">
+                <div id="productPage" >
+                    <h:panelGrid id="panelProd" columns="4"  cellpadding="5" cellspacing="30" width="100%">
+                        <c:forEach items="#{productMB.productListModel}" var ="product">
+                            <h:panelGroup>
+                                <h:form class="productBloc">
+                                    <ul>
+                                        <li><h:outputLabel value="#{product.label}" /></li>
+                                        <li><h:commandButton type="image" image="#{product.filePicture}" style="width:100px;"/></li>
+                                         <li><h:outputLabel value="#{product.price} €" /></li>
+                                        <li id="detailProd">
+                                            <h:link  type="button" value="#{msg.details}" outcome="faces/DetailProduct.xhtml" >
+                                                <f:param name ="idProduct" value="#{product.reference}"  />
+                                            </h:link>
+                                        </li>
+                                       
+                                    </ul>
+                                </h:form>
+                            </h:panelGroup>
+                        </c:forEach>
+                    </h:panelGrid>
+                </div>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

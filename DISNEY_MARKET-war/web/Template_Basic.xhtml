@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <f:view locale="#{internationalizationManagedBeans.locale}"> 
+    <f:loadBundle basename="languages.lang" var="msg"/>
+     
+    
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <h:outputStylesheet name="./css/cssLayout.css"/>
+        <title>Disney market</title>
+    </h:head>
+
+        <h:body>
+
+        <div id="entete">
+            <header>
+                <div id="top">
+                   <h:form >
+                       <div id="bannière">
+                        <ul>
+                                <li><h:commandButton id="p" type="image" image="resources/Image/panier.png" style="width:30px;height:30px" action="Basket.xhtml"/></li>
+                                <li><h:commandButton id="r" type="submit" value="#{msg.Register}" action ="faces/Registration.xhtml"/></li>
+                                <li><h:commandButton id="i" type="submit" value="#{msg.SignIn}" action ="faces/Identification.xhtml" /></li>
+                                <li><h:commandButton type="image"  image="resources/Image/English_Flag.png" style="width:20px;height:20px" action="#{internationalizationManagedBeans.setToEnglish}"   /></li>
+                                <li><h:commandButton type="image"  image="resources/Image/France_Flag.png" style="width:20px;height:20px"  action="#{internationalizationManagedBeans.setToFrench}"  /></li>
+                                <li><h:commandButton type="image"  image="resources/Image/Netherlands_Flag.png" style="width:20px;height:20px" action="#{internationalizationManagedBeans.setToNederlands}"/> </li>
+                            </ul>
+                       </div>
+                       </h:form>
+                </div>
+                <h1>Disney Market   </h1>
+                   
+                   
+                  
+                        
+
+                
+            </header>
+                <nav id="menu">
+                    <ul>
+                        <li>
+                             <h:link  value="#{msg.HomePage}" outcome="index.xhtml" /> 
+                        </li>
+                        <li>
+                            <h:link  value="#{msg.Who}" outcome ="faces/WhoAreWe.xhtml"/>
+                        </li>
+                        <li>
+                            <h:link  value="#{msg.Category}" outcome ="faces/Category.xhtml"/> 
+                        </li>
+                        <li>
+                            <h:link  value="#{msg.Discount}" /> 
+                        </li>
+                    </ul>
+                </nav>
+                        
+                   
+               
+            
+        </div>
+
+            <div class="content">
+                <ui:insert name="content">Content</ui:insert>
+            </div>
+
+    </h:body>
+   </f:view>
+</html>

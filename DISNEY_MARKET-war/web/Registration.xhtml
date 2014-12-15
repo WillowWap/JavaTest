@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./Template_Basic.xhtml">
+
+            <ui:define name="content">
+                <h:form>
+                    <h:outputLabel value ="#{msg.NameInsc}" for ="Name"></h:outputLabel>
+                    <h:inputText id="Name" required="true" requiredMessage="Name is required" value="#{registrationMB.customer.namecustomer}"> </h:inputText>
+                    <h:message for="Name"/><br/>
+                    
+                     <h:outputLabel value ="#{msg.FirstNameInsc}" for = "FirstName"></h:outputLabel>
+                     <h:inputText id="FirstName" required="true" requiredMessage="First name is required" value="#{registrationMB.customer.firstname}"> </h:inputText>
+                    <h:message for="FirstName"/><br/>
+                    
+                     <h:outputLabel value ="#{msg.MailAddInsc}" for = "MailAddress"></h:outputLabel>
+                     <h:inputText id="MailAddress" required="true" requiredMessage="Mail address is required" value="#{registrationMB.customer.emailaddress}">
+                         <f:validator validatorId="EmailValidator"/>
+                     </h:inputText>
+                    <h:message for="MailAddress"/><br/>
+                    
+                     <h:outputLabel value ="#{msg.PasswordInsc}" for = "Password"></h:outputLabel>
+                     <h:inputSecret id="Password" required="true" requiredMessage="Password confirme is required" validatorMessage="password must have 5 caracters " value="#{registrationMB.customer.password}">
+                         <f:validateLength maximum="5" minimum="0"/>
+                     </h:inputSecret>
+                    <h:message for="Password"/><br/>
+                    
+                    <h:outputLabel value ="#{msg.ConfirmPasswordInsc}" for = "PasswordConfirm"></h:outputLabel>
+                    <h:inputSecret id="PasswordConfirmation" required="true" requiredMessage="Mail address is required"  validatorMessage="password must have 5 caracters " value="#{registrationMB.confirmePassword}">
+                         <f:validateLength maximum="5" minimum="0"/>
+                    </h:inputSecret>
+                    <h:message for="PasswordConfirm"/><br/>
+                    
+<!--                 <h:outputLabel value ="#{msg.BirthdateInsc}" for = "Birthdate"></h:outputLabel>
+                     <h:inputText id="Birthdate" required="true" requiredMessage="Birthdate is required" value="#{registrationMB.customer.birthdate}"> </h:inputText><br/>
+                    <h:message for="Birthdate"/>-->
+                    
+                     <h:outputLabel value ="#{msg.AdresseInsc}" for = "Address"></h:outputLabel>
+                     <h:inputText id="Address" required="true" requiredMessage="Address is required" value="#{registrationMB.customer.address}"> </h:inputText>
+                    <h:message for="Address"/><br/>
+                    
+                     <h:outputLabel value ="#{msg.PhoneNumberInsc}" for = "PhoneNumber"></h:outputLabel>
+                     <h:inputText id="PhoneNumber" value="#{registrationMB.customer.phonenumber}">
+<!--                         <f:validator validatorId="PhoneValidator" />-->
+                     </h:inputText>
+<!--                    <h:message for="PhoneNumber"/><br/>-->
+                    
+                     <h:commandLink value="#{msg.Register}" action="#{registrationMB.CheckPassword(lalal)}"/>
+                </h:form>   
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

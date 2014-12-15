@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./Template_Basic.xhtml">
+
+             <ui:define name="content">
+                
+               <div id="DetailPage">
+                    
+                <h:form>
+                    <h:graphicImage value="#{detailProductMB.productModel.filePicture}" style="width:200px;"/>
+                    <h:outputLabel value="#{msg.PriceDetail}"/><h:outputLabel value="#{detailProductMB.productModel.price} €"/>
+                    
+                    <c:if test="#{detailProductMB.productModel.age != null}"> 
+                        <h:outputLabel value="#{msg.AgeDetail} "/><h:outputLabel value="#{detailProductMB.productModel.age} +"/>
+                    </c:if>
+                    
+                     <c:if test="#{detailProductMB.productModel.description != null}">
+                        <h:outputLabel value="#{msg.DescriptionDetail} "/><h:outputLabel value="#{detailProductMB.productModel.description}"/>
+                    </c:if>
+
+                     <c:if test="#{detailProductMB.productModel.country != null}">
+                        <h:outputLabel value="#{msg.CountryDetail}"/><h:outputLabel value="#{detailProductMB.productModel.country}"/>
+                    </c:if>                             
+
+                    <c:if test="#{detailProductMB.productModel.author != null}">
+                        <h:outputLabel value="#{msg.AuthorDetail}"/><h:outputLabel value="#{detailProductMB.productModel.author}"/>
+                    </c:if>
+                    
+                    <c:if test="#{detailProductMB.productModel.runtime != null} ">
+                         <h:outputLabel value="#{msg.RuntimeDetail}"/><h:outputLabel value="#{detailProductMB.productModel.runtime}"/>
+                     </c:if>
+
+                    <c:if test="#{detailProductMB.productModel.nbTrack != null}">
+                         <h:outputLabel value="#{msg.nbTrackDetail}"/><h:outputLabel value="#{detailProductMB.productModel.nbTrack}"/>
+                     </c:if>
+
+                    <c:if test="#{detailProductMB.productModel.nbCd != null}">
+                        <h:outputLabel value="#{msg.nbCDDetail}"/><h:outputLabel value="#{detailProductMB.productModel.nbCd}"/>
+                     </c:if>
+
+                     <c:if test="#{detailProductMB.productModel.genre != null}">
+                        <h:outputLabel value="#{msg.GenreDetail}"/><h:outputLabel value="#{detailProductMB.productModel.genre}"/>
+                     </c:if>
+
+                    <c:if test="#{detailProductMB.productModel.typeVideoGame != null}">
+                         <h:outputLabel value="#{msg.TypeVGDetail}"/><h:outputLabel value="#{detailProductMB.productModel.typeVideoGame}"/>
+                    </c:if>
+                </h:form>
+                <h:form>
+                    <h:commandButton value="Ajout" action="#{basket.addToBasket(detailProductMB.productEntity)}"/>
+                </h:form>
+               </div>
+            </ui:define>
+
+
+        </ui:composition>
+
+    </body>
+</html>

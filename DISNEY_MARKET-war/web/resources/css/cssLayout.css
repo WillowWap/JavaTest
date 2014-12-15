@@ -1,0 +1,216 @@
+@font-face{
+    font-family:'Gabriola';
+    src:url('../Font/Gabriola.ttf') format('truetype');
+    
+}
+@font-face{
+    font-family:'waltographUI';
+    src:url('../Font/waltographUI.ttf') format('truetype');
+    
+}
+//for the template
+
+.content{
+    background-color: #fffb40;
+}
+
+body{
+   background-color: #fffb40;
+}
+
+h1 {
+    font-family: 'waltographUI';
+    font-size:  50px;
+    color: #ffffff;
+    text-align: center;
+}
+
+#entete{
+   background-color: #113acf;
+   position: absolute;
+   left: 0px;
+   top: 0px;
+   width:100%;
+}
+
+#top {
+    position:absolute;
+    top: 0px;
+    right:0px;
+}
+
+#bannière ul{
+    display: inline-block;
+    height: 100%;
+    padding: 0;
+}
+
+#bannière ul li{
+    display:inline-block;
+    margin: 0px 0px 0px 3px;
+}
+
+nav {
+    width: 100%;
+    margin: 0px;      
+    background-color: #85c3ef;
+    border-radius: 20px;
+    
+}
+
+nav ul {
+    text-align: center;
+}
+
+nav ul li{
+    display: inline-block;
+    width: 150px;
+    height: 100%;
+    background-color:#85c3ef;
+    border: 3px solid #ffffff;
+    font-family: 'Gabriola';
+    font-size:23px;
+    font-weight: bold;
+    
+}
+
+a:link {
+    text-decoration:none;
+    color: #113ACF;
+}
+
+a:active {
+    text-decoration: none;
+    color: #113ACF;
+}
+
+a:visited {
+    text-decoration: none;
+    color: #113ACF;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #113ACF;
+}
+
+//for the pages
+    //home page
+#home{}
+#home{
+   position: relative;
+   float: inside;
+   display: block;
+   margin-left: auto;
+   margin-right:auto;
+   margin-top: 300px;
+   background-color: #85c3ef;
+   width:65%;
+   font-size: 40px;
+   color:#113acf;
+   text-align: center;
+   font-family: 'Gabriola';
+   border-radius: 15px;
+}
+    // who are we page
+#WhoPage{
+   position: relative;
+   float: inside;
+   display: block;
+   margin-left: auto;
+   margin-right:auto;
+   margin-top: 300px;
+   background-color: #85c3ef;
+   width:65%;
+   font-size: 40px;
+   color:#113acf;
+   text-align: center;
+   font-family: 'Gabriola'; 
+   border-radius: 15px;
+}
+    //category page
+#categoryPage{}
+#categoryPage{
+    position: relative;
+    top:165px;
+}
+
+#panelCat{}
+#panelCat{
+    display: bloc;
+    margin-left:auto;
+    margin-right:auto;
+    width: 75%;
+}
+
+.categoryBloc{}
+.categoryBloc{
+    font-family:'Gabriola';
+    font-size: 50px;
+    color:#113acf;
+    width: 200px;
+}
+
+.categoryBloc ul{
+    padding: 10px 10px 10px 10px;
+    background-color:#85c3ef;
+    border-radius: 15px;
+    
+}
+
+.categoryBloc ul li{
+    text-align:center;
+    list-style-type:none;
+}
+
+    //product page
+#productPage{}
+#productPage{
+    position: relative;
+    top:165px;
+}
+
+#panelProd{}
+#panelProd{
+    display: bloc;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.productBloc{}
+.productBloc{
+    font-family:'Gabriola';
+    font-size: 35px;
+    color:#113acf;
+    width: 280px;
+    height: 310px;
+}
+
+.productBloc ul{
+    padding: 10px 10px 10px 10px;
+    background-color:#85c3ef;
+    border-radius: 15px;
+    height: 310px;
+}
+
+.productBloc ul li{
+    text-align:center;
+    list-style-type:none;
+}
+
+#detailProd{}
+#detailProd{
+    border-color: #ffffff;
+    border-style:solid;
+    font-size: 25px;
+    border-radius: 30px;
+    
+}
+
+    //detail page
+#DetailPage{}
+#DetailPage{
+    position: relative;
+    top:165px;
+    background-color: #85c3ef;
+}
