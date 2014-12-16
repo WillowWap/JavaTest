@@ -19,17 +19,15 @@ import javax.validation.constraints.NotNull;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 
-/**
- *
- * @author Aude
- */
+
 @Entity
 @Table(name = "DISCOUNT")
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Discount.findAll", query = "SELECT d FROM Discount d"),
     @NamedQuery(name = "Discount.findByIddiscount", query = "SELECT d FROM Discount d WHERE d.iddiscount = :iddiscount"),
-    @NamedQuery(name = "Discount.findByPercent", query = "SELECT d FROM Discount d WHERE d.percent = :percent")})
+    @NamedQuery(name = "Discount.findByPercent", query = "SELECT d FROM Discount d WHERE d.percent = :percent"),
+    @NamedQuery(name = "Discount.findAllIdDiscout", query = "SELECT d.iddiscount FROM Discount d")})
 public class Discount implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id

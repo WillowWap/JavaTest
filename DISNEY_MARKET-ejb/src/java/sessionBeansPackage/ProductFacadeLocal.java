@@ -25,6 +25,8 @@ public interface ProductFacadeLocal {
     List<Product> FindAllProductCat (short idCat); 
     
      public ArrayList<model_D.Product> convertListEntityToListModel(Short idCat);
+     
+     ArrayList<model_D.Product> findProductForDiscount (List<Integer> idDiscount);
 
     List<Product> findRange(int[] range);
 

@@ -10,17 +10,20 @@ import javax.faces.context.FacesContext;
 import javax.inject.Named;
 import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
+import sessionBeansPackage.DiscountFacadeLocal;
 import sessionBeansPackage.ProductFacadeLocal;
 import sessionBeansPackage.TranslationproductFacadeLocal;
 
 @Named(value = "productMB")
 @ViewScoped
 public class ProductMB {
-
+    @EJB
+    private DiscountFacadeLocal discountFacade;
    @EJB
     private TranslationproductFacadeLocal translationproductFacade;
     @EJB
     private ProductFacadeLocal productFacade;
+    
       @Inject
     private InternationalizationManagedBeans lang; 
     private List<Product> listProduct; 
@@ -71,4 +74,5 @@ public class ProductMB {
          }
          
     }
+    
 }

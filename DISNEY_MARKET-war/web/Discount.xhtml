@@ -9,22 +9,22 @@
     <body>
 
         <ui:composition template="./Template_Basic.xhtml">
-           <ui:define name="content">
+
+            <ui:define name="content">
                 <div id="productPage" >
                     <h:panelGrid id="panelProd" columns="4"  cellpadding="5" cellspacing="30" width="100%">
-                        <c:forEach items="#{productMB.productListModel}" var ="product">
+                        <c:forEach items="#{discountMB.findDiscount()}" var ="product">
                             <h:panelGroup>
                                 <h:form class="productBloc">
                                     <ul>
                                         <li><h:outputLabel value="#{product.label}" /></li>
                                         <li><h:commandButton type="image" image="#{product.filePicture}" style="width:100px;"/></li>
-                                         <li><h:outputLabel value="#{product.price} €" /></li>
+                                        <li><h:outputLabel value="#{product.price} €" /><h:outputLabel value="#{product.discountRef.percent}%" /></li>   
                                         <li id="detailProd">
                                             <h:link  type="button" value="#{msg.details}" outcome="faces/DetailProduct.xhtml" >
                                                 <f:param name ="idProduct" value="#{product.reference}"  />
                                             </h:link>
                                         </li>
-                                       
                                     </ul>
                                 </h:form>
                             </h:panelGroup>

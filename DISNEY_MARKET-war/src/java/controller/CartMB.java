@@ -15,7 +15,7 @@ import sessionBeansPackage.LineFacadeLocal;
 
 @Named(value = "basketMB")
 @SessionScoped
-public class BasketMB implements Serializable {
+public class CartMB implements Serializable {
     @EJB
     private LineFacadeLocal lineFacade;
     private HashMap<Integer,model_D.Line> basket = new HashMap<Integer,model_D.Line>();
@@ -23,7 +23,7 @@ public class BasketMB implements Serializable {
     private Short quantity = 0;
     private model_D.Line line;
     
-    public BasketMB() {
+    public CartMB() {
 
     }
 
@@ -41,7 +41,7 @@ public class BasketMB implements Serializable {
     }
 
     public static void setIdLine(int idLine) {
-        BasketMB.idLine = idLine;
+        CartMB.idLine = idLine;
     }
 
     public Short getQuantity() {

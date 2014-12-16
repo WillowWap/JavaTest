@@ -12,14 +12,14 @@
                 <h:form>
                                   
                      <h:outputLabel value ="#{msg.MailAddInsc}" for = "MailAddress"></h:outputLabel>
-                     <h:inputText id="MailAddress" required="true" requiredMessage="Mail address is required" value="#{connexionMB.mail}"> </h:inputText><br/>
+                     <h:inputText id="MailAddress" required="true" requiredMessage="Mail address is required" value="#{connectionMB.mail}"> </h:inputText><br/>
                     <h:message for="MailAddress"/>
                     
                      <h:outputLabel value ="#{msg.PasswordInsc}" for = "Password"></h:outputLabel>
-                     <h:inputSecret id="Password" required="true" requiredMessage="Mail address is required" value="#{connexionMB.password}"> </h:inputSecret><br/>
+                     <h:inputSecret id="Password" required="true" requiredMessage="Mail address is required" value="#{connectionMB.password}"> </h:inputSecret><br/>
                     <h:message for="Password"/>
                     
-                    <h:commandLink type="submit" value="#{msg.SignIn}" action="#{connexionMB.Connect()}" />
+                    <h:commandLink type="submit" value="#{msg.SignIn}" action="#{connectionMB.Connect()}" />
                 </h:form>
             </ui:define>
 

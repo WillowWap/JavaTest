@@ -1,19 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package sessionBeansPackage;
 
 import EntityPackage.Discount;
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
-/**
- *
- * @author Aude
- */
 @Stateless
 public class DiscountFacade extends AbstractFacade<Discount> implements DiscountFacadeLocal {
     @PersistenceContext(unitName = "DISNEY_MARKET-ejbPU")
@@ -26,6 +20,13 @@ public class DiscountFacade extends AbstractFacade<Discount> implements Discount
 
     public DiscountFacade() {
         super(Discount.class);
+    }
+    
+    public List<Integer> FindAllId ()
+    {
+        Query query; 
+        query = em.createNamedQuery("Discount.findAllIdDiscout");
+        return (List<Integer>) query.getResultList();
     }
     
 }

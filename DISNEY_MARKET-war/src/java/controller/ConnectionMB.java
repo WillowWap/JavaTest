@@ -14,7 +14,7 @@ import sessionBeansPackage.CustomerFacadeLocal;
 public class ConnectionMB implements Serializable {
     @EJB
     private CustomerFacadeLocal customerFacade;
-    private String connection = "Failed";
+    private Boolean connection = false;
     private String password;
     private String mail;
     private Customer custoDB;
@@ -22,11 +22,11 @@ public class ConnectionMB implements Serializable {
     public ConnectionMB() {
     }
 
-    public String getConnection() {
+    public Boolean getConnection() {
         return connection;
     }
 
-    public void setConnection(String connection) {
+    public void setConnection(Boolean connection) {
         this.connection = connection;
     }
 
@@ -62,19 +62,19 @@ public class ConnectionMB implements Serializable {
         {
             if(custoDB.getEmailaddress().equals(mail) && custoDB.getPassword().equals(password))
             {
-                connection = "connect";
+                connection = true;
             }
             else 
             {
-                connection = "Failed";
+                connection = false;
             }
         }
         else
         {
-                connection = "Failed";
+                connection = false;
         }
         
-        if(connection.equals("connect"))
+        if(connection)
         {
            return "index.xhtml"; 
         }

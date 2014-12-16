@@ -15,9 +15,9 @@
                <div id="DetailPage">
                     
                 <h:form>
+                    <h:outputLabel value="#{detailProductMB.productModel.label}"/>
                     <h:graphicImage value="#{detailProductMB.productModel.filePicture}" style="width:200px;"/>
                     <h:outputLabel value="#{msg.PriceDetail}"/><h:outputLabel value="#{detailProductMB.productModel.price} €"/>
-                    
                     <c:if test="#{detailProductMB.productModel.age != null}"> 
                         <h:outputLabel value="#{msg.AgeDetail} "/><h:outputLabel value="#{detailProductMB.productModel.age} +"/>
                     </c:if>
@@ -55,7 +55,7 @@
                     </c:if>
                 </h:form>
                 <h:form>
-                    <h:commandButton value="Ajout" action="#{basket.addToBasket(detailProductMB.productEntity)}"/>
+                    <h:commandButton value="Ajout" action="#{basket.addToBasket(detailProductMB.productModel)}"/>
                 </h:form>
                </div>
             </ui:define>

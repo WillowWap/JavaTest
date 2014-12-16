@@ -34,7 +34,10 @@
                        </h:form>
                 </div>
                 <h1>Disney Market   </h1>
-                   
+
+                <c:if test="#{connectionMB.connection}">
+                    <h2>bienvenue, #{connectionMB.custoDB.firstname}</h2>
+                </c:if>
                    
                   
                         
@@ -53,7 +56,7 @@
                             <h:link  value="#{msg.Category}" outcome ="faces/Category.xhtml"/> 
                         </li>
                         <li>
-                            <h:link  value="#{msg.Discount}" /> 
+                            <h:link  value="#{msg.Discount}" outcome="faces/Discount.xhtml" /> 
                         </li>
                     </ul>
                 </nav>
