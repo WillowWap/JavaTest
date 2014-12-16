@@ -77,11 +77,11 @@ public class ProductFacade extends AbstractFacade<Product> implements ProductFac
         if(product.getDiscountref() != null)
              {
                  model_D.Discount discount = new model_D.Discount();
-                Double reduction = product.getPrice().doubleValue() * product.getDiscountref().getPercent()/100;
-               double p= product.getPrice().doubleValue() - reduction;
-               BigDecimal price = new BigDecimal(p);
-                discount.setPercent(product.getDiscountref().getPercent());    
-                productModel.setPrice(price.setScale(2, BigDecimal.ROUND_CEILING));
+                 Double reduction = product.getPrice().doubleValue() * product.getDiscountref().getPercent()/100;
+                 double p= product.getPrice().doubleValue() - reduction;
+                 BigDecimal price = new BigDecimal(p);
+                 discount.setPercent(product.getDiscountref().getPercent());    
+                 productModel.setPrice(price.setScale(2, BigDecimal.ROUND_CEILING));
                 
              }
              else 

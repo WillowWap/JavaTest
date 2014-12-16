@@ -51,7 +51,6 @@ public class EmailValidator implements Validator {
     
        public ResourceBundle internationalization (FacesContext context)
     {
-       
           Locale locale = context.getViewRoot().getLocale();
        return  ResourceBundle.getBundle("languages.lang", locale);
     }

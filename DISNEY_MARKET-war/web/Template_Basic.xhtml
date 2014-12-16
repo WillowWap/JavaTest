@@ -11,7 +11,7 @@
     
     <h:head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-   <h:outputStylesheet name="./css/cssLayout.css"/>
+<!--   <h:outputStylesheet name="./css/cssLayout.css"/>-->
         <title>Disney market</title>
     </h:head>
 
@@ -23,9 +23,16 @@
                    <h:form >
                        <div id="bannière">
                         <ul>
-                                <li><h:commandButton id="p" type="image" image="resources/Image/panier.png" style="width:30px;height:30px" action="Basket.xhtml"/></li>
+                                <li><h:commandButton id="p" type="image" image="resources/Image/panier.png" style="width:30px;height:30px" action="Cart.xhtml"/></li>
                                 <li><h:commandButton id="r" type="submit" value="#{msg.Register}" action ="faces/Registration.xhtml"/></li>
-                                <li><h:commandButton id="i" type="submit" value="#{msg.SignIn}" action ="faces/Identification.xhtml" /></li>
+                                <li>
+                                    <c:if test="#{!connectionMB.connection}">
+                                        <h:commandButton id="i" type="submit" value="#{msg.SignIn}" action ="faces/Identification.xhtml" />
+                                    </c:if>
+                                    <c:if test="#{connectionMB.connection}">
+                                        <h:commandButton id="i" type="submit" value="#{msg.SignOut}" action ="#{connectionMB.logOut()}" />
+                                    </c:if>
+                                </li>
                                 <li><h:commandButton type="image"  image="resources/Image/English_Flag.png" style="width:20px;height:20px" action="#{internationalizationManagedBeans.setToEnglish}"   /></li>
                                 <li><h:commandButton type="image"  image="resources/Image/France_Flag.png" style="width:20px;height:20px"  action="#{internationalizationManagedBeans.setToFrench}"  /></li>
                                 <li><h:commandButton type="image"  image="resources/Image/Netherlands_Flag.png" style="width:20px;height:20px" action="#{internationalizationManagedBeans.setToNederlands}"/> </li>

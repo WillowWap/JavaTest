@@ -54,11 +54,11 @@ public class ConnectionMB implements Serializable {
         this.custoDB = custoDB;
     }
     
-    public String Connect ()
+    public String logIn ()
     {
-       custoDB = customerFacade.findByEmail(mail);
+       boolean exist = customerFacade.findIfEmailAlreadyExist(mail);
         
-        if(custoDB != null)
+        if(exist)
         {
             if(custoDB.getEmailaddress().equals(mail) && custoDB.getPassword().equals(password))
             {
@@ -82,5 +82,12 @@ public class ConnectionMB implements Serializable {
         {
             return "RegistrationDenied.xhtml";
         }
+    }
+    
+    
+    public void logOut ()
+    {
+      connection = false; 
+      custoDB = null;
     }
 }

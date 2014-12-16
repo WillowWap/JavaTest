@@ -53,6 +53,7 @@ public class RegistrationMB {
     
     public void createCustomer (Customer custome)
     {
+        
         Date date = new Date(1994,12,11); 
         customer.setBirthdate(date);
         customer.setIdcustomer(this.generateTheID());

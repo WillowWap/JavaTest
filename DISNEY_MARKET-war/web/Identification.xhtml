@@ -19,7 +19,7 @@
                      <h:inputSecret id="Password" required="true" requiredMessage="Mail address is required" value="#{connectionMB.password}"> </h:inputSecret><br/>
                     <h:message for="Password"/>
                     
-                    <h:commandLink type="submit" value="#{msg.SignIn}" action="#{connectionMB.Connect()}" />
+                    <h:commandLink type="submit" value="#{msg.SignIn}" action="#{connectionMB.logIn()}" />
                 </h:form>
             </ui:define>
 

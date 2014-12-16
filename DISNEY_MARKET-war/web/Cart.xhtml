@@ -13,9 +13,27 @@
    <ui:define name="content">
 
         <h:form>
-            <h:outputLabel value="#{basketMB.line.prodctRef.label}"/>
-                
+            
+            <c:forEach items ="#{cartMB.theBasket()}" var="category">
+                           
+                               
+                <h:outputLabel value="#{category.productRef.label}" />   
+            
+                <h:outputLabel value="#{category.price}" />
+                                        
+                          
+            </c:forEach>
+            
+<!--            <h:dataTable value="#{cartMB.basket.values}" var="product">
+                <h:column>
+                    <f:facet name="head">
+                        <h:outputText value="label"/>
+                    </f:facet>
+                 
+                </h:column>
+            </h:dataTable>      -->
             </h:form>
+      
       
             </ui:define>
 

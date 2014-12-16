@@ -46,10 +46,9 @@
                     <h:message for="Address"/><br/>
                     
                      <h:outputLabel value ="#{msg.PhoneNumberInsc}" for = "PhoneNumber"></h:outputLabel>
-                     <h:inputText id="PhoneNumber" value="#{registrationMB.customer.phonenumber}">
-<!--                         <f:validator validatorId="PhoneValidator" />-->
+                     <h:inputText id="PhoneNumber" value="#{registrationMB.customer.phonenumber}"/>
                      </h:inputText>
-<!--                    <h:message for="PhoneNumber"/><br/>-->
+
                     
                      <h:commandLink value="#{msg.Register}" action="#{registrationMB.CheckPassword(lalal)}"/>
                 </h:form>   

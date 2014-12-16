@@ -1,24 +1,25 @@
 
 package controller;
 
-import EntityPackage.Line;
-import EntityPackage.Product;
+
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import javax.ejb.EJB;
 import sessionBeansPackage.LineFacadeLocal;
 
-@Named(value = "basketMB")
+@Named(value = "cartMB")
 @SessionScoped
 public class CartMB implements Serializable {
     @EJB
     private LineFacadeLocal lineFacade;
     private HashMap<Integer,model_D.Line> basket = new HashMap<Integer,model_D.Line>();
+    private ArrayList<model_D.Line> listLine = new ArrayList<model_D.Line>();
     private static int idLine; 
     private Short quantity = 0;
     private model_D.Line line;
@@ -26,7 +27,6 @@ public class CartMB implements Serializable {
     public CartMB() {
 
     }
-
 
     public HashMap<Integer, model_D.Line> getBasket() {
         return basket;
@@ -59,6 +59,14 @@ public class CartMB implements Serializable {
     public void setLine(model_D.Line line) {
         this.line = line;
     }
+
+    public ArrayList<model_D.Line> getListLine() {
+        return listLine;
+    }
+
+    public void setListLine(ArrayList<model_D.Line> listLine) {
+        this.listLine = listLine;
+    }
     
     
     public void addToBasket (model_D.Product product)
@@ -68,25 +76,21 @@ public class CartMB implements Serializable {
         BigDecimal price = new BigDecimal(p);
         model_D.Line line = new model_D.Line();
         
-        line.setProdctRef(product);
+        line.setProductRef(product);
         line.setQuantity(quantity);
         line.setIdLigne(1);
-        line.setPrice(price);
+        line.setPrice(price.setScale(2, BigDecimal.ROUND_CEILING));
         
         
-        basket.put(1, line);
+        basket.put(0, line);
 
     }
     
-    public void GetTheBasket ()
+    public ArrayList<model_D.Line> theBasket ()
     {
-//        ArrayList<model_D.Line> listLine = new ArrayList<model_D.Line>();
-//        for(model_D.Line line : basket.values())
-//        {
-//            listLine.add(line);
-//            
-//        }
-        line = basket.get(1);
+    listLine = new ArrayList<model_D.Line>(basket.values());
+              return listLine; 
+        
     }
     
 }
